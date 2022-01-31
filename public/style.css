@@ -1,0 +1,17 @@
+header {
+    border: 1px white solid;
+    background-color: lightblue;
+    padding: 2px;
+    font-family: Impact;
+    font-size: 25px;
+    color: blue;
+}
+
+header > img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    vertical-align: bottom;
+
+  }
+
