@@ -17,12 +17,12 @@ app.get('/', (req, res) =>{
             <link rel="stylesheet" href="/style.css"/>
         </head>
         <body>
-            <div class='team-list'>
-            <header><img src="/nfl_image.png"/>National Football League</header>
-            ${teamList.map(team => {
-            return `<a href = "/teams/${team.id}"span class="team">${team.name} </span>
-                    <div></div>`}).join('')}
-    
+            <header><img src="/nfl_image.png"/> National Football League </header>
+            <div class="container">
+                ${teamList.map(team => {
+                return `<p><a href = "/teams/${team.id}"span class="team">${team.name} </span></p>
+                        <div></div>`}).join('')}
+            </div>
         </body>
         </hml>
     `
@@ -41,8 +41,10 @@ app.get('/teams/:id', (req,res) =>{
     </head>
     <body>
     <header><img src="/id_${teamName.id}_image.jpg"/>${teamName.name}</header>
-        <p> ${teamName.name} --> ${teamName.division} </p>  
-        <p> 2021 - 2022 Season W/L Record : ${teamName.record} </p>
+        <div class="container">
+            <p><a href="/" /> ${teamName.name} --> ${teamName.division} </p>  
+            <p> 2021 - 2022 Season W/L Record : ${teamName.record} </p>
+        </div> 
     </body>
     `
     res.send(html)
